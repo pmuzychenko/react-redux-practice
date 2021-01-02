@@ -1,24 +1,30 @@
 import React from 'react';
 import './App.css';
 import {Accordion} from './components/Accordion/Accordion';
+
+import { OnOff } from './components/OnOff/OnOff';
 import {Rating} from "./components/Rating/Rating";
 
 function App() {
+    console.log('App is rendering')
     return (
         <div>
-            <PageTitle title={'This is App Component'}/>
-            Article 1
-            <Rating value={3}/>
-            <Accordion title={'Menu'} collapsed={true}/>
-            <Accordion title={'Users'} collapsed={false}/>
-            <PageTitle title={"These are my friends"}/>
-            Article 2
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+            {/*<PageTitle title={'This is App Component'}/>*/}
+            {/*Article 1*/}
+            {/*<Rating value={3}/>*/}
+            {/*<Accordion title={'Menu'} collapsed={true}/>*/}
+            {/*<Accordion title={'Users'} collapsed={false}/>*/}
+            {/*<PageTitle title={"These are my friends"}/>*/}
+            {/*Article 2*/}
+            {/*<Rating value={0}/>*/}
+            {/*<Rating value={1}/>*/}
+            {/*<Rating value={2}/>*/}
+            {/*<Rating value={3}/>*/}
+            {/*<Rating value={4}/>*/}
+            {/*<Rating value={5}/>*/}
+            <OnOff/>
+            <OnOff/>
+            <OnOff/>
         </div>
     );
 }
