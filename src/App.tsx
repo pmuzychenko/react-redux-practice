@@ -1,35 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from './components/Accordion/Accordion';
-
-import { OnOff } from './components/OnOff/OnOff';
 import {Rating} from "./components/Rating/Rating";
-import { UncontrolledAccordion } from './components/UncontrolledAccordion/UncontrolledAccordion';
-import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {RatingValueType, UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function App() {
     console.log('App is rendering')
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    const [collapsed, setCollapsed] = useState<boolean>(false)
+    const [onOff, setOnOff] = useState<boolean>(false)
+
+
     return (
-        <div>
-            {/*<PageTitle title={'This is App Component'}/>*/}
-            {/*Article 1*/}
-            {/*<Rating value={3}/>*/}
-            {/*<UncontrolledAccordion title={'Menu'} collapsed={true}/>*/}
-            {/*<UncontrolledAccordion title={'Users'} collapsed={false}/>*/}
-            {/*<PageTitle title={"These are my friends"}/>*/}
-            {/*Article 2*/}
-            {/*<Rating value={0}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
-            <OnOff/>
-            <OnOff/>
-            <OnOff/>
-            <UncontrolledAccordion title={'Menu'}/>
-            <UncontrolledAccordion title={'Users'}/>
+        <div className={'App'}>
+
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Accordion title={'Menu'} collapsed={collapsed} onChange={() => setCollapsed(!collapsed)}/>
             <UncontrolledRating/>
+            <UncontrolledOnOff onChange={setOnOff}/> {onOff.toString()}
         </div>
     );
 }
