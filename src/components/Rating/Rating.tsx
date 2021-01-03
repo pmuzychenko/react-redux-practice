@@ -1,8 +1,8 @@
 import React from "react";
 import {RatingValueType} from "../UncontrolledRating/UncontrolledRating";
 
-type RatingPropsType = {
-    value: 0 | 1 | 2 | 3 | 4 | 5
+export type RatingPropsType = {
+    value: RatingValueType
     onClick: (value: RatingValueType) => void
 }
 
