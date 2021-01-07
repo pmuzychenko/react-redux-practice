@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useRef, useState} from 'react';
+import React, {useState} from 'react';
 
 export default {
     title: 'Example/ReactMemoWork',
